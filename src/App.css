@@ -1,0 +1,122 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #fff;
+  font-style: italic;
+  text-align: center;
+  color: rgba(0,0,0,0.8);
+}
+
+.App {
+  flex-direction: row;
+  display: flex;
+  justify-content: center;
+
+  margin: 20px;
+  height: 100vh;
+}
+.wrap-one {
+  display: flex;
+  flex-direction: column;
+
+  flex: 1;
+  align-items: center;
+}
+.wrap-two {
+  display: flex;
+  flex-direction: column;
+
+  flex: 1;
+  align-items: center;
+}
+.FindThisCard {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin-top: 3em;
+}
+.FindThisCard h2 {
+  text-decoration: underline;
+}
+.ImgContainer {
+  position: relative;
+  display: inline-block;
+  margin: 0 5px;
+  padding: 10px;
+  border: 1px solid black;
+  box-shadow: 1px 1px 0 black;
+}
+.closed::after {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 120px;
+  height: 175px;
+  border: 1px solid #000;
+  display: block;
+  content: "";
+  background: transparent url('./images/image_question.jpg') no-repeat;
+  background-size: 119px 174px;
+}
+#pickupCards,
+#zoovulogo {
+  width: 660px;
+  height: 300px;
+  background-color: lightgrey;
+}
+.hidden {
+  visibility: hidden;
+}
+.PickupCards, .ZoovuLogo {
+  padding: 1em;
+  background: lightgray;
+  border: 1px solid lightgrey;
+  -webkit-box-shadow: 3px 2px 21px -10px rgba(0,0,0,0.9);
+  -moz-box-shadow: 3px 2px 21px -10px rgba(0,0,0,0.9);
+  box-shadow: 3px 2px 21px -10px rgba(0,0,0,0.9);
+}
+.PickupCards {
+  margin-bottom: 25px;
+}
+.PickupCards h2,
+.ZoovuLogo h2 {
+  margin-bottom: 25px;
+}
+
+.TimeSpent {
+  height: 80px;
+  display: block;
+  border-bottom: 1px solid black;
+  width: 400px;
+  box-shadow: 0 0 0 0px rgba(76, 83, 89, 0.5);
+}
+
+.resetGame {
+  background-color: darkviolet; /* Green */
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  font-style: italic;
+  font-weight: bold;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-top: 30px;
+  -webkit-box-shadow: 3px 2px 21px -10px rgba(0,0,0,0.9);
+  -moz-box-shadow: 3px 2px 21px -10px rgba(0,0,0,0.9);
+  box-shadow: 3px 2px 21px -10px rgba(0,0,0,0.9);
+}
+
+img {
+  width: 100px;
+  height: 150px;
+}
+
