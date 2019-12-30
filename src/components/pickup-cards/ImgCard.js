@@ -18,7 +18,7 @@ function ImgCard({hidden, closed, startTimer, dragOver,src, id}) {
          draggable="true"
          onDragStart={dragStart}
          onDragOver={dragOver}>
-      <img src={src}/>
+      <img src={src} alt="logo-card"/>
     </div>
   );
 }

@@ -18,11 +18,24 @@ class App extends React.Component {
       intervalId: undefined,
       imageDragStart: [0, 2, 1, 3, 4],
       imageDragOver: [],
+      shuffled: [],
     };
   }
   
+  shuffleArray = (array) => {
+    let newArray = [...array];
+    for(let i = newArray.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [newArray[i], newArray[j]] = [newArray[j], newArray[i]];
+    }
+    return newArray.map(str => parseInt(str));
+  }
+  
+  componentDidMount() {
+    this.setState({ shuffled: this.shuffleArray(Object.keys(images)) });
+  }
+  
   addCard = (id) => {
-    console.log(id);
     this.setState((prevState) => ({
         imageDragOver: [...prevState.imageDragOver, parseInt(id)],
         imageDragStart: prevState.imageDragStart.filter(i => i !== parseInt(id)),
@@ -66,6 +79,7 @@ class App extends React.Component {
   
   endGame = () => {
     this.stopTimer();
+    alert("Game is Finished;")
   };
   
   resetGame = () => {
@@ -87,25 +101,20 @@ class App extends React.Component {
   };
   
   compareImages = (imgId) => {
-    if(this.state.showCardIndex === imgId) {
-      return true;
-    } else {
-      this.addTime();
-      return false;
-    }
+    if(imgId === this.state.showCardIndex) return true;
+    if((imgId === 1 && this.state.showCardIndex === 2) || (imgId === 2 && this.state.showCardIndex === 1)) return true;
+    this.addTime();
+    return false;
   };
   
   render() {
-    const dragOver = (img, e) => {
-      console.log(e.clientX);
-    };
     let image = images[this.state.showCardIndex];
     return (
       <>
         <div className="App">
           <div className="wrap-one">
-            <PickupCards imageDragStart={this.state.imageDragStart} startTimer={this.startTimer}
-                         dragOver={dragOver}/>
+            <PickupCards shuffled={this.state.shuffled} imageDragStart={this.state.imageDragStart}
+                         startTimer={this.startTimer}/>
             <ZoovuLogo imageDragOver={this.state.imageDragOver} addCard={this.addCard}
                        compareImages={this.compareImages}/>
           </div>
