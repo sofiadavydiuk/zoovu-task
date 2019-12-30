@@ -1,6 +1,6 @@
 import React from 'react';
 
-function ImgCard({hidden, closed, startTimer, dragOver,src, id}) {
+function ImgCard({ hidden, closed, startTimer, dragOver,src, id }) {
   
   const dragStart = e => {
     const target = e.target;

@@ -7,7 +7,6 @@ class PickupCards extends Component {
   
   render() {
     let { startTimer, imageDragStart, shuffled } = this.props;
-    console.log(shuffled);
     return (
       <div className="PickupCards">
         <h2>Pickup Cards</h2>

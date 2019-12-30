@@ -52,7 +52,7 @@ body {
   box-shadow: 1px 1px 0 black;
 }
 .closed::after {
-  position: absolute;
+  background-size: 119px 174px;
   top: 0;
   left: 0;
   width: 120px;
@@ -61,7 +61,8 @@ body {
   display: block;
   content: "";
   background: transparent url('./images/image_question.jpg') no-repeat;
-  background-size: 119px 174px;
+  position: absolute;
+
 }
 #pickupCards,
 #zoovulogo {
