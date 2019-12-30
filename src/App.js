@@ -79,7 +79,7 @@ class App extends React.Component {
   
   endGame = () => {
     this.stopTimer();
-    alert("Game is Finished;")
+    setTimeout(() => alert('Game is finished :)'),1000);
   };
   
   resetGame = () => {
